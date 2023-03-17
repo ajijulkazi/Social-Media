@@ -8,6 +8,12 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "compilerOptions":{
+    "lib": ["es2020"],
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "target": "es2022"
+   },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
@@ -25,7 +31,7 @@
   },
   "scripts": {
     "server": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js NODE_OPTIONS='--experimental-specifier-resolution=node' node src/server.js"
   }
   
 }
