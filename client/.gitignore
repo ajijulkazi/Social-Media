@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 
+// eslint-disable-next-line
 # testing
 /coverage
 
