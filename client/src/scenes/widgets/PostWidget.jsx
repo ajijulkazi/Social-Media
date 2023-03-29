@@ -43,7 +43,7 @@ const PostWidget= ({
 
 
     const patchLike = async () => {
-        const response = fetch(`http://localhost:5000/posts/${postId}/like`,{
+        const response = await fetch(`http://localhost:5000/posts/${postId}/like`,{
             method: "PATCH",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -103,14 +103,15 @@ const PostWidget= ({
             </FlexBetween>
             {isComments && (
                 <Box mt="0.5rem">
-                    {comments.map((comment, i) =>(
+                    {console.log(comments)}
+                    {/* {comments.map((comment, i) =>(
                         <Box key={`${name}-${i}`}>
                             <Divider />
                             <Typography sx={{ color: main, m: "0.5rem", pl: "1rem"}}>
                                 {comment}
                             </Typography>
                         </Box>
-                    ))}
+                    ))} */}
                     <Divider />
                 </Box>
             )}

@@ -5,7 +5,7 @@ import PostWidget from "./PostWidget";
 
 
 const PostsWidget = ({userId, isProfile = false }) => {
-    const disPatch = useDispatch();
+    const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts);
     const token = useSelector((state) => state.token);
 
@@ -15,7 +15,7 @@ const PostsWidget = ({userId, isProfile = false }) => {
             headers: { Authorization: `Bearer ${token}`},
         });
         const data = await response.json();
-        disPatch(setPosts({ posts: data }));
+        dispatch(setPosts({ posts: data }));
     };
 
     const getUserPosts = async () => {
@@ -24,7 +24,7 @@ const PostsWidget = ({userId, isProfile = false }) => {
             headers: { Authorization: `Bearer ${token}`},
         });
         const data = await response.json();
-        disPatch(setPosts({ posts: data }));
+        dispatch(setPosts({ posts: data }));
     };
 
     useEffect(() => {
