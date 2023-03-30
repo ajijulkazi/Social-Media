@@ -41,7 +41,6 @@ const PostWidget= ({
     const main = palette.neutral.main;
     const primary = palette.primary.main;
 
-
     const patchLike = async () => {
         const response = await fetch(`http://localhost:5000/posts/${postId}/like`,{
             method: "PATCH",
@@ -54,6 +53,10 @@ const PostWidget= ({
         const updatedPost = await response.json();
         dispatch(setPost({ post: updatedPost }));
     };
+    
+
+    
+
 
     return (
         <WidgetWrapper m="2rem 0">
@@ -90,7 +93,7 @@ const PostWidget= ({
                     </FlexBetween>
 
                     <FlexBetween gap="0.3rem">
-                    <IconButton onClick={() => setIsComments(!isComments)}>
+                    <IconButton onClick={() => setIsComments(!isComments)}> 
                             <ChatBubbleOutlineOutlined/>
                     </IconButton>
                     <Typography>{comments.length}</Typography>
@@ -103,15 +106,14 @@ const PostWidget= ({
             </FlexBetween>
             {isComments && (
                 <Box mt="0.5rem">
-                    {console.log(comments)}
-                    {/* {comments.map((comment, i) =>(
+                    {comments.map((comment, i) =>(
                         <Box key={`${name}-${i}`}>
                             <Divider />
                             <Typography sx={{ color: main, m: "0.5rem", pl: "1rem"}}>
                                 {comment}
                             </Typography>
                         </Box>
-                    ))} */}
+                    ))}
                     <Divider />
                 </Box>
             )}
