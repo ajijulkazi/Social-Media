@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate} from "react-router-dom";
 
-const UserWidget = ({userId, picturePath }) => {
+const UserWidget = ({userId}) => {
     const [user, setUser] = useState(null);
     const { palette } = useTheme(null);
     const navigate = useNavigate();
@@ -59,7 +59,7 @@ const UserWidget = ({userId, picturePath }) => {
                 onClick={() => navigate(`/profile/${userId}`)}
             >
                 <FlexBetween gap="1rem">
-                    <UserImage image={picturePath}/>
+                    <UserImage image={user.picturePath}/>
                     <Box>
                         <Typography 
                             variant="h4"
@@ -74,7 +74,7 @@ const UserWidget = ({userId, picturePath }) => {
                         >
                             {firstName} {lastName}
                         </Typography>
-                        <Typography color={medium}>{friends?.length} friends</Typography>
+                        <Typography color={medium}>{friends.length} friends</Typography>
                     </Box>
                     
                 </FlexBetween>
