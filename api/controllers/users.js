@@ -67,5 +67,22 @@ export const addRemoveFriend = async (req, res) => {
 
     } catch (err) {
         return res.status(404).json({ message: err.message });
-    }
-}
+    };
+    
+};
+
+export const updateUserProfile = async (req, res) => {
+    const { id } = req.params;
+    const prams = req.body;
+    await User.findById(id).then (user => {
+        user.firstName = prams.firstName || user.firstName
+        user.lastName = prams.lastName || user.lastName
+        user.picturePath = prams.picturePath || user.picturePath
+        user.location = prams.location || user.location
+        user.occupation = prams.occupation || user.occupation
+
+        user.save();
+        res.json(user);
+    })
+    
+};

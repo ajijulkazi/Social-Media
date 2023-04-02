@@ -78,7 +78,10 @@ const UserWidget = ({userId}) => {
                     </Box>
                     
                 </FlexBetween>
-                <ManageAccountsOutlined/>
+                <ManageAccountsOutlined
+                        sx={{ cursor: "pointer"}}        
+                    />
+                
                 </FlexBetween>
                 <Divider/>
                 {/* Second row */}
@@ -144,6 +147,37 @@ const UserWidget = ({userId}) => {
                     <EditOutlined sx={{ color: main }}/>
                     </FlexBetween>
                 </Box>
+                <Divider />
+                {/* 5th row */}
+                <FlexBetween
+                gap="0.5rem"
+                pb="1.1rem"
+                onClick={() => navigate(`/profileUpdate`)}
+            >
+                <FlexBetween gap="1rem">
+                    
+                    <Box>
+                        <Typography 
+                            variant="h5"
+                            color={dark}
+                            fontWeight="200"
+                            mt="25px"
+                            pl="80px"
+                            sx={{
+                                "&:hover": {
+                                    cursor: "pointer"
+                                }
+                            }}
+                        >
+                            Profile Update
+                        </Typography>
+                        
+                    </Box>
+                   
+                    
+                </FlexBetween>
+                
+                </FlexBetween>
             
         </WidgetWrapper>
     );
