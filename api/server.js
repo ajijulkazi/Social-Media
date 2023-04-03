@@ -50,11 +50,6 @@ const upload = multer({ storage });
 app.post("/auth/register", upload.single("picture"), register);
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
-app.get("/users", async (req, res) => {
-        const allUsers = await User.find();
-        res.status(200).json({ allUsers });
-})
-
 
 
 // ROUTES

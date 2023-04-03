@@ -152,7 +152,7 @@ const UserWidget = ({userId}) => {
                 <FlexBetween
                 gap="0.5rem"
                 pb="1.1rem"
-                onClick={() => navigate(`/profileUpdate`)}
+                onClick={() => navigate(`/profileUpdate/${userId}`)}
             >
                 <FlexBetween gap="1rem">
                     
